@@ -6,10 +6,11 @@ An attempt to challenge myself to get through as much of Advent of Code 2020!
 
 |Day|Part 1|Part 2|Challenge|
 |:-:|:----:|:----:|:--------|
-| 1 | Done |Done  |[Day 1](https://adventofcode.com/2020/day/1)|
-| 2 | Done |Done  |[Day 2](https://adventofcode.com/2020/day/2)| 
-| 3 | Done |Done  |[Day 3](https://adventofcode.com/2020/day/3)|
-| 4 |      |      |[Day 4](https://adventofcode.com/2020/day/4)|
+| 1 | Done | Done |[Day 1](https://adventofcode.com/2020/day/1)|
+| 2 | Done | Done |[Day 2](https://adventofcode.com/2020/day/2)| 
+| 3 | Done | Done |[Day 3](https://adventofcode.com/2020/day/3)|
+| 4 | Done |      |[Day 4](https://adventofcode.com/2020/day/4)|
+| 5 |      |      |[Day 5](https://adventofcode.com/2020/day/5)|
 
 ### **Day 1**
 
@@ -33,6 +34,9 @@ Input data is from part 1. With using a `-1` for the index position where the al
 Read input data using `readFileSync`, splitting the data into 2D arrays(technically it is a 2D array but without splitting the strings). The set-up for the input data is not done perfectly as I have just concatenate the array long enough for this exercise. Then used a for loop to iterate through the array to count the columns/y-axis and within the for loop, another counter is set up to iterate by x-amount per y-axis iteration. This can be changed to suit different slope down and slope right requirements. The elements are then compared using an if statement to increment a counter which will return the tree count. <br>
 
 **Part 2** <br>
-Steps are identical for part 1. Repeated part 1 for 5 different scenarios and multiplied to get the final answer.
+Steps are identical for part 1. Repeated part 1 for 5 different scenarios and multiplied to get the final answer. <br>
 
+### **Day 4**
 
+**Part 1** <br>
+Input data is read and cleaned up using `.split` and `.replace`. Utilizing for loop to iterate through each individual passport, and using a `.forEach` loop to iterate through each passport's information and using `.includes` to check if the passport contains the corresponded information. The information are then `.push` into an array(`ansArr`) to be used to check if each passport contains enough valid information to be a valid passport. `ansArr` is then iterated through to check if the elements in the array contains 7 required information for a valid passport and increments a counter for every valid passport. The counter then totals up to the answer for valid passports. <br>
