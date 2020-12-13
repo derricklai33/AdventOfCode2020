@@ -9,7 +9,7 @@ An attempt to challenge myself to get through as much of Advent of Code 2020!
 | 1 | Done | Done |[Day 1](https://adventofcode.com/2020/day/1)|
 | 2 | Done | Done |[Day 2](https://adventofcode.com/2020/day/2)| 
 | 3 | Done | Done |[Day 3](https://adventofcode.com/2020/day/3)|
-| 4 | Done |      |[Day 4](https://adventofcode.com/2020/day/4)|
+| 4 | Done | Done |[Day 4](https://adventofcode.com/2020/day/4)|
 | 5 |      |      |[Day 5](https://adventofcode.com/2020/day/5)|
 
 ### **Day 1**
@@ -40,3 +40,6 @@ Steps are identical for part 1. Repeated part 1 for 5 different scenarios and mu
 
 **Part 1** <br>
 Input data is read and cleaned up using `.split` and `.replace`. Utilizing for loop to iterate through each individual passport, and using a `.forEach` loop to iterate through each passport's information and using `.includes` to check if the passport contains the corresponded information. The information are then `.push` into an array(`ansArr`) to be used to check if each passport contains enough valid information to be a valid passport. `ansArr` is then iterated through to check if the elements in the array contains 7 required information for a valid passport and increments a counter for every valid passport. The counter then totals up to the answer for valid passports. <br>
+
+**Part 2** <br>
+Using the input data from Part 1, using `.split` again on the ':' of the input data. This allows the string data from each passport to be split between the 'heading' and the information part of the data. The data are then put into a for loop with switch statement to sort out valid information that are accepted as valid passports (check code to see switch statement). The information are then pushed onto a temporary array, which is then pushed again into `ansArr`, where it is checked using an if statement to see if the array length for each passport is equals to  7 (same as Part 1, where valid passports has 7 must have information). A counter is incremented every time a valid passport is checked and that is the answer for Part 2!
