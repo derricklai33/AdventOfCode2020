@@ -1,9 +1,11 @@
 const fs = require('fs');
 const readInput = fs.readFileSync('./day5data.txt', 'utf8')
 
+// Constants
 const totalRow = 128;
 const totalCol = 8;
 
+// Data preparation 
 const splitArray = (data) => {
   const arr = data.split("\n");
   const result = arr.map(item => {
@@ -17,12 +19,17 @@ const splitArray = (data) => {
   return result;
 }
 
+// Finding the row number
 const rowFinder = (string) => {
+  // Setting up the array which contains element from 0..128
   let tempRow = [];
   for (let row = 0; row < totalRow; row++) {
     tempRow.push(row);
   }
 
+  // Splits the array in half, preserve the half that is needed.
+  // Process is repeated until array contains only 1 element.
+  // This process is similar to binary search
   for(let i = 0; i < string.length;i++) {
     if(string[i].toLowerCase() === 'f') {
       tempRow = tempRow.slice(0, Math.floor(tempRow.length/2));
@@ -33,12 +40,15 @@ const rowFinder = (string) => {
   return tempRow;
 }
 
+// Finding the column number
 const colFinder = (string) => {
+  // Setting up array ranging from 0..8
   let tempCol = [];
   for (let col = 0; col < totalCol; col++) {
     tempCol.push(col);
   }
 
+  // Same as row finder 
   for(let i = 0; i < string.length;i++) {
     if(string[i].toLowerCase() === 'l') {
       tempCol = tempCol.slice(0, Math.floor(tempCol.length/2));
@@ -49,17 +59,20 @@ const colFinder = (string) => {
   return tempCol;
 }
 
+// Part A
 const partA = (arr) => {
   let ansArr = [];
   arr.forEach(item => {
     let row = rowFinder(item[0]);
     let col = colFinder(item[1]);
+    // Math operation as per challenge
     ansArr.push((parseInt(row) * 8) + parseInt(col));
   })
   return ansArr;
 }
 
 const partB = (arr) => {
+  // Min number +1 and max number -1 as they are not valid seats
   for(let i = Math.min(...arr) + 1; i < Math.max(...arr) - 1; i++) {
     if(!arr.includes(i)) {
       return i;
