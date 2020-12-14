@@ -19,8 +19,8 @@ const splitArray = (data) => {
 
 const rowFinder = (string) => {
   let tempRow = [];
-  for (let start = 0; start < totalRow; start++) {
-    tempRow.push(start);
+  for (let row = 0; row < totalRow; row++) {
+    tempRow.push(row);
   }
 
   for(let i = 0; i < string.length;i++) {
@@ -35,8 +35,8 @@ const rowFinder = (string) => {
 
 const colFinder = (string) => {
   let tempCol = [];
-  for (let start = 0; start < totalCol; start++) {
-    tempCol.push(start);
+  for (let col = 0; col < totalCol; col++) {
+    tempCol.push(col);
   }
 
   for(let i = 0; i < string.length;i++) {
@@ -56,10 +56,21 @@ const partA = (arr) => {
     let col = colFinder(item[1]);
     ansArr.push((parseInt(row) * 8) + parseInt(col));
   })
-  return (Math.max(...ansArr));
+  return ansArr;
+}
+
+const partB = (arr) => {
+  for(let i = Math.min(...arr) + 1; i < Math.max(...arr) - 1; i++) {
+    if(!arr.includes(i)) {
+      return i;
+    }
+  }
 }
 
 const resultArr = splitArray(readInput);
-const answerPartA = partA(resultArr);
+const answerPartA = Math.max(...(partA(resultArr)));
+const answerPartB = partB(partA(resultArr));
 
 console.log("Answer for part A is: " + answerPartA);
+console.log("Answer for part B is: " + answerPartB);
+
