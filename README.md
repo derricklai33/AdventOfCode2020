@@ -11,7 +11,8 @@ An attempt to challenge myself to get through as much of Advent of Code 2020!
 | 3 | Done | Done |[Day 3](https://adventofcode.com/2020/day/3)|
 | 4 | Done | Done |[Day 4](https://adventofcode.com/2020/day/4)|
 | 5 | Done | Done |[Day 5](https://adventofcode.com/2020/day/5)|
-| 6 |  |  |[Day 6](https://adventofcode.com/2020/day/6)|
+| 6 | Done | Done |[Day 6](https://adventofcode.com/2020/day/6)|
+| 7 |  |  |[Day 7](https://adventofcode.com/2020/day/7)|
 
 ### **Day 1**
 
@@ -51,4 +52,12 @@ Using the input data from Part 1, using `.split` again on the ':' of the input d
 Data is read and cleaned up using `.split` on newlines and further `.slice` on the 7th element, which separates the row and columns. Iterating through each boarding pass and using if statements and a pre-defined array of 0..128, depending on if the character is a `F` or `B`, the array is halved and the desired half of the array is preserved/mapped. The process repeats until only 1 element is remaining, for both row and columns. The elements are then multiplied and added to give the resulting boarding pass ID. Finally, using `Math.max`, the highest boarding pass ID is found and that is the answer for Part 1! <br>
 
 **Part 2** <br>
-Using the array returned from Part 1, using a for loop, with the starting element be the smallest boarding ID - 1 and the loop condition to be highest element boarding ID + 1. And using `.includes` and the not operator `!`, the return value is the answer for Part 2!
+Using the array returned from Part 1, using a for loop, with the starting element be the smallest boarding ID - 1 and the loop condition to be highest element boarding ID + 1. And using `.includes` and the not operator `!`, the return value is the answer for Part 2! <br>
+
+### **Day 6**
+
+**Part 1** <br>
+Data is read and cleaned up using `.split` and `.replace` using regex to seperate data into array of arrays, separating each group's answer and also each person's answer within each group. Then using the `uniqArr` function, using `.join`, the data are then concatenated into a giant string and using the spread and set operator, it returns an array containing only unique characters. The array is then iterated and increment a count for each unique character that is counted and that is the answer for Part 1! <br>
+
+**Part 2** <br>
+Reusing data from part 1 and the `uniqArr` array, using `.include` and for loop to iterate through the array returned from `uniqArr` and iterating through the cleaned up input data. By incrementing a count every time each `.include` returns true, it is then compared using an if statement against the number of people per group. If the if statement of the counter === number of people in a group, this equates to every person in the group answering yes to the same question. The question (just the character) is pushed into an array (`ansArr`) and the array length is the answer for part 2!
