@@ -13,6 +13,7 @@ An attempt to challenge myself to get through as much of Advent of Code 2020!
 | 5 | Done | Done |[Day 5](https://adventofcode.com/2020/day/5)|
 | 6 | Done | Done |[Day 6](https://adventofcode.com/2020/day/6)|
 | 7 |  |  |[Day 7](https://adventofcode.com/2020/day/7)|
+| 8 |  |  |[Day 8](https://adventofcode.com/2020/day/8)|
 
 ### **Day 1**
 
