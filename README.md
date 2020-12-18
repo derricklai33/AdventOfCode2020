@@ -12,8 +12,9 @@ An attempt to challenge myself to get through as much of Advent of Code 2020!
 | 4 | Done | Done |[Day 4](https://adventofcode.com/2020/day/4)|
 | 5 | Done | Done |[Day 5](https://adventofcode.com/2020/day/5)|
 | 6 | Done | Done |[Day 6](https://adventofcode.com/2020/day/6)|
-| 7 |  |  |[Day 7](https://adventofcode.com/2020/day/7)|
-| 8 |  |  |[Day 8](https://adventofcode.com/2020/day/8)|
+| 7 |      |      |[Day 7](https://adventofcode.com/2020/day/7)|
+| 8 | Done |      |[Day 8](https://adventofcode.com/2020/day/8)|
+| 9 |  |  |[Day 9](https://adventofcode.com/2020/day/9)|
 
 ### **Day 1**
 
@@ -61,4 +62,17 @@ Using the array returned from Part 1, using a for loop, with the starting elemen
 Data is read and cleaned up using `.split` and `.replace` using regex to seperate data into array of arrays, separating each group's answer and also each person's answer within each group. Then using the `uniqArr` function, using `.join`, the data are then concatenated into a giant string and using the spread and set operator, it returns an array containing only unique characters. The array is then iterated and increment a count for each unique character that is counted and that is the answer for Part 1! <br>
 
 **Part 2** <br>
-Reusing data from part 1 and the `uniqArr` array, using `.include` and for loop to iterate through the array returned from `uniqArr` and iterating through the cleaned up input data. By incrementing a count every time each `.include` returns true, it is then compared using an if statement against the number of people per group. If the if statement of the counter === number of people in a group, this equates to every person in the group answering yes to the same question. The question (just the character) is pushed into an array (`ansArr`) and the array length is the answer for part 2!
+Reusing data from part 1 and the `uniqArr` array, using `.include` and for loop to iterate through the array returned from `uniqArr` and iterating through the cleaned up input data. By incrementing a count every time each `.include` returns true, it is then compared using an if statement against the number of people per group. If the if statement of the counter === number of people in a group, this equates to every person in the group answering yes to the same question. The question (just the character) is pushed into an array (`ansArr`) and the array length is the answer for part 2! <br>
+
+### **Day 7**
+
+#### **Unable to Complete Part 1 & 2** <br>
+
+### **Day 8**
+
+**Part 1** <br>
+Data is read and cleaned up using `.split` by '\n' and ' ' which separates the data into a 'heading' and its information. Using a tracking array `tracker` and for loop to iterate through the instructions and execute them. By using a switch case statement, a `jmp` instruction will increase or decrease the for loop counter, which mimics the 'instruction jumps' and a `acc` instruction will increase or decrease the accumulator accordingly and a `nop` instruction will simply increase the for loop counter by 1, which mimics the next set of instruction to be executed. And by pushing the for loop counter element into the `tracker` array and using `.includes`, the counter can be broken using an if statement if the same set of instruction occurs again and return the `accumulator` element, which is the answer for Part 1! <br>
+
+**Part 2** <br>
+#### **Unable to Complete Part 2** <br>
+
