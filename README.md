@@ -14,7 +14,8 @@ An attempt to challenge myself to get through as much of Advent of Code 2020!
 | 6 | Done | Done |[Day 6](https://adventofcode.com/2020/day/6)|
 | 7 |      |      |[Day 7](https://adventofcode.com/2020/day/7)|
 | 8 | Done |      |[Day 8](https://adventofcode.com/2020/day/8)|
-| 9 |  |  |[Day 9](https://adventofcode.com/2020/day/9)|
+| 9 | Done | Done |[Day 9](https://adventofcode.com/2020/day/9)|
+|10 |  |  |[Day 10](https://adventofcode.com/2020/day/10)|
 
 ### **Day 1**
 
@@ -76,3 +77,9 @@ Data is read and cleaned up using `.split` by '\n' and ' ' which separates the d
 **Part 2** <br>
 #### **Unable to Complete Part 2** <br>
 
+### **Day 9**
+**Part 1** <br>
+Input data is cleaned up using `.split` on newlines('\n) and and parseInt to turn them into integers. Also, using a `pairSum` function to check if there is a unique combination of numbers from the array(`arr`) that equals to the `target` value and returns false if there is not a pair found. The function `partA` starts the for loop iteration at `i=25` as the first 25 numbers does not need to be checked. The iteration then returns the array element when `pairSum` function returns a false and that array element is the answer for Part 1! <br>
+
+**Part 2** <br>
+Reusing the answer from Part 1 and using a nested loop, the iteration of the nested loop is iterated through using `tempNum` to continuously add values from the 2nd layer of the nested loop. Using an if statement, when the sum of `tempNum` equals the `wrongNumber`, which is the answer from Part 1, another for loop is used to `.push` elements from within the range of the nested loop `i` and `j` into `ansArr`. Finally, using `Math.min` and `Math.max` to find the minimum and maximum value from the array and return the sum of `min` and `max`, which is the answer for Part 2! <br>
