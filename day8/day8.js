@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { parse } = require('path');
 const readInput = fs.readFileSync('./day8data.txt', 'utf8')
 
 // Data is first split by \n which returns an array and further
@@ -37,9 +38,35 @@ const partA = (arr) => {
   return accumulator;
 }
 
+const partB = (arr) => {
+  let accumulator = 0;
+  let tracker = [];
+  for (let j = 0; j < arr.length; j++) {
+    console.log(j);
+
+    switch(arr[j][0]) {
+      case 'acc':
+        accumulator += parseInt(arr[j][1])
+        tracker.push(j);
+        break;
+      case 'jmp':
+        j += parseInt(arr[j][1] - 1);
+        tracker.push(j);
+        break;
+      case 'nop':
+        tracker.push(j);
+        break;
+    }
+  }
+  // console.log(tracker[tracker.length])
+  return accumulator
+}
+
 // Function invoke
 const finalData = getData(readInput);
 const partAResult = partA(finalData);
+// const partBResult = partB(finalData);
 
 // Console log answers
 console.log("The answer for Part A is: " + partAResult);
+// console.log("The answer for Part B is: " + partBResult);
