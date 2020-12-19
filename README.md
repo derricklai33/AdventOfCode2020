@@ -15,7 +15,8 @@ An attempt to challenge myself to get through as much of Advent of Code 2020!
 | 7 |      |      |[Day 7](https://adventofcode.com/2020/day/7)|
 | 8 | Done |      |[Day 8](https://adventofcode.com/2020/day/8)|
 | 9 | Done | Done |[Day 9](https://adventofcode.com/2020/day/9)|
-|10 |  |  |[Day 10](https://adventofcode.com/2020/day/10)|
+|10 | Done |      |[Day 10](https://adventofcode.com/2020/day/10)|
+|11 |  |      |[Day 11](https://adventofcode.com/2020/day/11)|
 
 ### **Day 1**
 
@@ -78,8 +79,17 @@ Data is read and cleaned up using `.split` by '\n' and ' ' which separates the d
 #### **Unable to Complete Part 2** <br>
 
 ### **Day 9**
+
 **Part 1** <br>
-Input data is cleaned up using `.split` on newlines('\n) and and parseInt to turn them into integers. Also, using a `pairSum` function to check if there is a unique combination of numbers from the array(`arr`) that equals to the `target` value and returns false if there is not a pair found. The function `partA` starts the for loop iteration at `i=25` as the first 25 numbers does not need to be checked. The iteration then returns the array element when `pairSum` function returns a false and that array element is the answer for Part 1! <br>
+Input data was cleaned up using `.split` on newlines('\n) and and parseInt to turn them into integers. Also, using a `pairSum` function to check if there is a unique combination of numbers from the array(`arr`) that equals to the `target` value and returns false if there is not a pair found. The function `partA` starts the for loop iteration at `i=25` as the first 25 numbers does not need to be checked. The iteration then returns the array element when `pairSum` function returns a false and that array element is the answer for Part 1! <br>
 
 **Part 2** <br>
 Reusing the answer from Part 1 and using a nested loop, the iteration of the nested loop is iterated through using `tempNum` to continuously add values from the 2nd layer of the nested loop. Using an if statement, when the sum of `tempNum` equals the `wrongNumber`, which is the answer from Part 1, another for loop is used to `.push` elements from within the range of the nested loop `i` and `j` into `ansArr`. Finally, using `Math.min` and `Math.max` to find the minimum and maximum value from the array and return the sum of `min` and `max`, which is the answer for Part 2! <br>
+
+### **Day 10**
+
+**Part 1** <br>
+Data input was cleaned up using `.split` on newlines ('\n'), converted string to int using `parseInt()` function and also sorted using `.sort` with with a function expression of `a - b`. If `a-b` returns < 0, a is before b, if `a-b` returns 0, no need to change its position and if `a-b` returns > 0, b is before a. This will result in an array arranged in ascending order. The array is then simply compared with the element of the array at index[i] and index[i+1]. If the difference is 3, increment the count of `differenceThree` and if the difference is 1, increment count of `differenceOne`. Finally, return the multiplication of `differenceOne` and `differenceThree` and that is the answer for Part 1! <br>
+
+**Part 2** <br>
+#### **Unable to Complete Part 2** <br>
